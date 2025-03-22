@@ -13,5 +13,9 @@ Ce dossier contient les fichiers responsables de l'exécution des différentes f
 - Le nettoyage des fichiers
 - Le formatage des périphériques USB
 
+### Tasks
+Dans ce dossier se trouvent les fichiers qui seront ajoutés au cron pour s'exécuter automatiquement au démarrage et/ou régulièrement pendant l'utilisation de la station.
+
+
 ### 3DFile
 Ce dossier regroupe les fichiers nécessaires à l'impression 3D du boîtier pour le Raspberry Pi. Ce boîtier est conçu pour protéger et intégrer le matériel utilisé dans ce projet.
