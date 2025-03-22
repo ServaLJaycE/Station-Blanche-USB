@@ -22,7 +22,7 @@ Ce script vérifie l'intégrité du fichier `start.sh` en le comparant à une ve
 - Redirige également toutes les sorties vers le fichier `logs.txt`.
 
 ### `start_reference.sh`
-**/!\ Veuillez changer les permissions de ce fichier avec la commande suivante, avant de rendre toute modification impossible :**
+**/!\ Veuillez changer les permissions de ce fichier avec la commande suivante, afin de rendre toute modification de celui-ci impossible :**
 ```cmd
 chattr +i start_reference.sh
 ```
