@@ -1,30 +1,34 @@
 import tkinter as tk
-from tkinter import ttk
-from tkinter import *
-from tkinter.ttk import *
+import subprocess
+import os
+import time
 
-# Création de la fenêtre principale
-accueil = Tk()
-accueil.title("Station de Décontamination USB")
-accueil.attributes('-fullscreen', True)
+from django.template.defaultfilters import center
 
-# Style ttk
-style = ttk.Style()
-style.configure('TLabel', font=("Arial", 30), padding=20)
 
-# Ajouter un bouton pour quitter le mode plein écran
-def exit_fullscreen(event=None):
-    accueil.attributes('-fullscreen', False)
+def verifier_detection():
+    # Chemin vers le fichier contenant le chemin du périphérique
+    usb_device_path = "/usr/share/Backend/usb_device_path.txt"
 
-accueil.bind('<Escape>', exit_fullscreen)
+    # Vérifie si le fichier existe
+    if os.path.exists(usb_device_path):
+        root.destroy()
+        subprocess.run(["python3", "main_interface.py"])
+    else:
+        root.after(2000, verifier_detection)
 
-# Conteneur principal
-frame = ttk.Frame(accueil, padding=50)
-frame.pack(expand=True)
+# Crée la fenêtre principale
+root = tk.Tk()
+root.title("Station de Décontamination USB")
+root.attributes('-fullscreen', True)
 
-# Label d'accueil
-label = ttk.Label(frame, text="Bonjour, je suis une station de décontamination USB.\nInsérez un périphérique.", wraplength=800, font=("Arial", 40))
+label = tk.Label(root, text="Bonjour, je suis une station de décontamination USB.\nInsérez un périphérique.", font=("Arial", 30))
 label.pack(pady=20)
+label.place(relx=0.5, rely=0.5, anchor="center")  # Centre le conteneur
 
-# Lancer la boucle principale
-accueil.mainloop()
+
+subprocess.Popen(["bash", "/usr/share/Backend/detect.sh"])
+
+root.after(2000, verifier_detection)
+
+root.mainloop()
