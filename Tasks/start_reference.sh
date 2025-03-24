@@ -13,7 +13,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Chemin vers le fichier Python Tkinter
-PYTHON_FILE="/usr/share/projet/le_fichier.py"
+PYTHON_FILE="/usr/share/projet/Frontend/accueil.py"
 
 
 
