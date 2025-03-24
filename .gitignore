@@ -1,4 +1,7 @@
-. __pycache__
 . .idea
 . .vscode
 . .pytest_cache
+
+*.pyc
+*.pyo
+__pycache__/
