@@ -4,6 +4,12 @@ from tkinter import ttk
 from tkinter import * 
 from tkinter.ttk import *
 
+# Créer la fenêtre principale
+menu = Tk()
+menu.title("Station de décontamination USB")
+
+# Configurer le plein écran
+menu.attributes('-fullscreen', True)
 
 # Fonctions associées aux boutons
 def analyser_usb():
@@ -21,9 +27,6 @@ def ejecter_usb():
 def quitter() :
     menu.quit()
 
-# Créer la fenêtre principale
-menu = Tk()
-menu.title("Station de décontamination USB")
 
 # style
 style = ttk.Style() 
@@ -34,20 +37,11 @@ style.configure('Formater.TButton', foreground='black', background='#ABEBC6')   
 style.configure('Ejecter.TButton', foreground='black', background='#F5B7B1')    # Rouge
 style.configure('Quitter.TButton', foreground='black', background='lightgrey')    # Gris
 
-# 🔹 Appliquer la couleur au survol avec map()
+# Appliquer la couleur au survol avec map()
 style.map('Analyser.TButton', background=[('active', '#5DADE2')]) 
 style.map('Formater.TButton', background=[('active', '#58D68D')])  
 style.map('Ejecter.TButton', background=[('active', '#EC7063')])  
 style.map('Quitter.TButton', background=[('active', 'grey')])  
-
-# Configurer le plein écran
-menu.attributes('-fullscreen', True)
-
-# Ajouter un bouton pour quitter le mode plein écran
-def exit_fullscreen(event=None):
-    menu.attributes('-fullscreen', False)
-
-menu.bind('<Escape>', exit_fullscreen)
 
 
 # Ajouter un label pour le titre
@@ -59,7 +53,6 @@ label.place(relx=0.5, rely=0.3, anchor="center")
 # Créer un conteneur pour les boutons côte à côte
 button_frame = ttk.Frame(menu)
 button_frame.pack(pady=20)
-
 button_frame.place(relx=0.5, rely=0.5, anchor="center")  # Centre le conteneur
 
 
