@@ -1,17 +1,26 @@
 import tkinter as tk
+import subprocess
 
 def formater_peripherique():
-    label.config(text="Formatage en cours...")
-    # Ajoutez ici le code pour formater le périphérique
+    root.destroy()
+    subprocess.run(["python", "format_interface.py"])
 
 def nettoyer_peripherique():
+    #script pour nettoyer les fichiers infectés
     label.config(text="Nettoyage en cours...")
-    # Ajoutez ici le code pour nettoyer les fichiers infectés
+    root.destroy()
+    subprocess.run(["python", "end_clean_interface.py"])
+    
+
+
+def quitter():
+    root.destroy()
+    subprocess.run(["python", "main_interface.py"])
 
 # Création de la fenêtre principale
 root = tk.Tk()
 root.title("Alerte Sécurité USB")
-root.geometry("400x250")
+root.attributes('-fullscreen', True)
 
 label = tk.Label(root, text="Attention ! Un élément suspect a été détecté.", font=("Arial", 12), fg="red")
 label.pack(pady=20)

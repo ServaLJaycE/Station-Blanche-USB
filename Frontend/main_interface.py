@@ -8,13 +8,12 @@ def analyser_usb():
     label.config(text="Analyse de la clé USB en cours...")
 
 def formater_usb():
-    #format_interface.ouvrir_format_page()
-    subprocess.run(["python", "format_interface.py"])
     menu.destroy()
-
+    subprocess.run(["python", "format_interface.py"])
 
 def ejecter_usb():
-    label.config(text="Clé USB éjectée en toute sécurité.")
+    menu.destroy()
+    subprocess.run(["python", "accueil.py"])
 
 # bouton pour quitter
 def quitter() :

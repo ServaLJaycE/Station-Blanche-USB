@@ -6,7 +6,7 @@ def retour_accueil():
 # Création de la fenêtre principale
 root = tk.Tk()
 root.title("Nettoyage Terminé")
-root.geometry("400x200")
+root.attributes('-fullscreen', True)
 
 label = tk.Label(root, text="Nettoyage terminé. Les logs ont été écrits sur le périphérique USB.", font=("Arial", 12), wraplength=350)
 label.pack(pady=20)

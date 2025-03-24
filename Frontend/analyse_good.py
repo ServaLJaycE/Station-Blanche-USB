@@ -1,12 +1,15 @@
 import tkinter as tk
+import subprocess
 
 def retour_accueil():
+    #script pour calcul de hahs
     root.destroy()
+    subprocess.run(["python", "main_interface.py"])
 
 # Création de la fenêtre principale
 root = tk.Tk()
 root.title("Analyse USB")
-root.geometry("400x200")
+root.attributes('-fullscreen', True)
 
 label = tk.Label(root, text="Analyse terminée : Aucun virus détecté !", font=("Arial", 12))
 label.pack(pady=20)

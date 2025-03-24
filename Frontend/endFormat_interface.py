@@ -6,7 +6,7 @@ def retour_accueil():
 # Création de la fenêtre principale
 root = tk.Tk()
 root.title("Formatage Terminé")
-root.geometry("400x200")
+root.attributes('-fullscreen', True)
 
 # Message de réussite ou d'échec du formatage (modifiable selon le résultat réel)
 success = True  # Remplacez par une variable déterminant le succès ou l'échec
