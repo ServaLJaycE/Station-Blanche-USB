@@ -29,9 +29,9 @@ def quitter() :
     subprocess.run(["python", "main_interface.py"])
 
 # image
-image_windows = PhotoImage(file="windows.png").subsample(12, 12)   # Image pour NTFS (Windows)
-image_linux = PhotoImage(file="linux.png").subsample(10, 10)   # Image pour EXT4 (Linux)
-image_winlin = PhotoImage(file="winlin.png").subsample(4, 4)   # Image pour FAT32 (Windows et Linux)
+image_windows = PhotoImage(file="images/windows.png").subsample(12, 12)   # Image pour NTFS (Windows)
+image_linux = PhotoImage(file="images/linux.png").subsample(10, 10)   # Image pour EXT4 (Linux)
+image_winlin = PhotoImage(file="images/winlin.png").subsample(4, 4)   # Image pour FAT32 (Windows et Linux)
     
 # style
 style = ttk.Style() 
