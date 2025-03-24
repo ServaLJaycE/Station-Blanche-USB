@@ -1,20 +1,24 @@
 import tkinter as tk
-from format_interface import ouvrir_format_page
+import subprocess
+#from format_interface import ouvrir_format_page
+
 
 # Fonctions associées aux boutons
 def analyser_usb():
     label.config(text="Analyse de la clé USB en cours...")
 
 def formater_usb():
-    ouvrir_format_page(app, label)
+    #format_interface.ouvrir_format_page()
+    subprocess.run(["python", "format_interface.py"])
     menu.destroy()
+
 
 def ejecter_usb():
     label.config(text="Clé USB éjectée en toute sécurité.")
 
-# Créer l'application principale    
-app = tk.Tk()
-app.withdraw()
+# bouton pour quitter
+def quitter() :
+    menu.quit()
 
 # Créer la fenêtre principale
 menu = tk.Tk()
@@ -29,8 +33,6 @@ def exit_fullscreen(event=None):
 
 menu.bind('<Escape>', exit_fullscreen)
 
-def on_closing():
-    app.destroy()
 
 # Ajouter un label pour le titre
 label = tk.Label(menu, text="Bienvenue sur la station de décontamination USB !", font=("Arial", 20))
@@ -51,8 +53,8 @@ button_ejecter = tk.Button(button_frame, text="Éjecter", command=ejecter_usb, f
 button_ejecter.pack(side=tk.LEFT, padx=15)
 
 # Ajouter un bouton pour quitter l'application
-button_quitter = tk.Button(menu, text="Quitter", command=on_closing, font=("Arial", 16), bg="lightgrey", width=15, height=3)
+button_quitter = tk.Button(menu, text="Quitter", command=quitter, font=("Arial", 16), bg="lightgrey", width=15, height=3)
 button_quitter.pack(pady=20)
 
 # Lancer la boucle principale
-app.mainloop()
+menu.mainloop()
