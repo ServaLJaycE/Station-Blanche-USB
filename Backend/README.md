@@ -31,6 +31,11 @@ Ce script formate automatiquement le périphérique USB détecté en **NTFS**. I
 - Formate le périphérique en NTFS sans demander de confirmation.
 - Enregistre les événements et erreurs dans `logs.txt`.
 
+### `ejectUSB.sh`
+Ce script éjecte en toute sécurité le périphérique USB détecté. Il :
+- Lit le chemin du périphérique depuis `usb_device_path.txt`.
+- Utilise la commande `udisksctl` pour éjecter le périphérique en toute sécurité.
+
 ### `usb_device_path.txt`
 Ce fichier temporaire contient le chemin du périphérique USB détecté par `detect.sh`. Il est utilisé par les scripts de formatage (`fat32.sh`, `ext4.sh`, `ntfs.sh`) pour identifier le périphérique à formater.
 Ce fichier etant temporaire il n'existe qu'entre le moment d'injection de la clé, et l'éjection de celle-ci.
@@ -50,7 +55,10 @@ Ce fichier contient les journaux générés par les scripts du dossier Backend. 
    - Exécutez l'un des scripts de formatage (`fat32.sh`, `ext4.sh`, `ntfs.sh`) pour formater le périphérique détecté.
    - Les événements et erreurs seront enregistrés dans `logs.txt`.
 
-3. **Vérification des logs :**
+3. **Éjection d'un périphérique USB :**
+   - Exécutez `ejectUSB.sh` pour éjecter en toute sécurité le périphérique USB détecté.
+
+4. **Vérification des logs :**
    - Consultez le fichier `logs.txt` pour suivre les actions effectuées par les scripts.
 
 ## Notes
