@@ -3,6 +3,7 @@ import subprocess
 from tkinter import ttk
 from tkinter import * 
 from tkinter.ttk import *
+import os
 
 # Créer la fenêtre principale
 menu = Tk()
@@ -11,8 +12,11 @@ menu.title("Station de décontamination USB")
 # Configurer le plein écran
 menu.attributes('-fullscreen', True)
 
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
+
 # Fonctions associées aux boutons
 def analyser_usb():
+    subprocess.Popen(["bash", os.path.join(backend_dir, "pre_analyse.sh")])
     label.config(text="Analyse de la clé USB en cours...")
 
 def formater_usb():
@@ -20,6 +24,8 @@ def formater_usb():
     subprocess.run(["python", "format_interface.py"])
 
 def ejecter_usb():
+    process=subprocess.Popen(["bash", os.path.join(backend_dir, "ejectUSB.sh")])
+    process.wait()
     menu.destroy()
     subprocess.run(["python", "accueil.py"])
 

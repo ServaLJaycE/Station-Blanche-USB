@@ -3,7 +3,7 @@ import subprocess
 from tkinter import ttk
 from tkinter import * 
 from tkinter.ttk import *
-
+import os
 
 # Créer une nouvelle fenêtre pour le formatage
 format_interface = Tk()
@@ -12,17 +12,28 @@ format_interface.title("Choisir le format de la clé USB")
 # Configurer le plein écran
 format_interface.attributes('-fullscreen', True)
 
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
+
 def fat32():
-    # ajouter script pour formater en fat32
-    pass
+    process=subprocess.Popen(["bash", os.path.join(backend_dir, "fat32.sh")])
+    process.wait()
+
+    format_interface.destroy()
+    subprocess.run(["python", "main_interface.py"])
 
 def ntfs():
-    # ajouter script pour formater en ntfs
-    pass
+    process=subprocess.Popen(["bash", os.path.join(backend_dir, "ntfs.sh")])
+    process.wait()
+
+    format_interface.destroy()
+    subprocess.run(["python", "main_interface.py"])
 
 def ext4():
-    # ajouter script pour formater en ext4
-    pass
+    process=subprocess.Popen(["bash", os.path.join(backend_dir, "ext4.sh")])
+    process.wait()
+
+    format_interface.destroy()
+    subprocess.run(["python", "main_interface.py"])
 
 def quitter() :
     format_interface.destroy()

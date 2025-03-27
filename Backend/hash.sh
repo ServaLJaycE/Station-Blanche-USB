@@ -40,3 +40,4 @@ echo "Hash global SHA-1 de la clé USB : $GLOBAL_HASH" | tee -a "$LOG_FILE"
 rm -f "$TEMP_FILE"
 
 echo "=== Fin du calcul du hash global SHA-1 : $(date) ===" | tee -a "$LOG_FILE"
+

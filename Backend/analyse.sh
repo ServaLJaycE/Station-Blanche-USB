@@ -1,5 +1,7 @@
 #!/bin/bash
 
+virus=false
+
 # Redirige toutes les sorties (stdout et stderr) vers logs.txt
 LOG_FILE="/usr/share/projet/Backend/logs.txt"
 exec >> "$LOG_FILE" 2>&1
@@ -43,6 +45,7 @@ echo "$(date) - Étape 1 : Analyse antivirus avec ClamAV... [analyse.sh]"
 clamscan -r "$USB_MOUNT_PATH" --remove >> "$LOG_FILE" 2>&1
 if [ $? -ne 0 ]; then
     echo "$(date) - ClamAV a détecté des fichiers infectés. Consultez $LOG_FILE pour plus de détails. [analyse.sh]"
+    virus=true
     exit 1
 fi
 echo "$(date) - ClamAV : Aucun fichier infecté détecté. [analyse.sh]"
@@ -53,6 +56,7 @@ find "$USB_MOUNT_PATH" -type f \( -iname "*.doc" -o -iname "*.docx" -o -iname "*
     echo "$(date) - Analyse du fichier : $file [analyse.sh]"
     olevba "$file" --reveal >> "$LOG_FILE" 2>&1
     if [ $? -ne 0 ]; then
+        virus=true
         echo "$(date) - oletools a détecté des macros malveillantes dans $file. Consultez $LOG_FILE pour plus de détails. [analyse.sh]"
         exit 1
     fi
@@ -60,3 +64,9 @@ done
 echo "$(date) - oletools : Aucun fichier Office malveillant détecté. [analyse.sh]"
 
 echo "$(date) - Analyse terminée avec succès. [analyse.sh]"
+
+if [ "$virus" = true ]; then
+    exit 1
+else
+    exit 0
+fi
