@@ -24,6 +24,9 @@ udisksctl power-off -b "$DEVICE_PATH" >> "$LOG_FILE" 2>&1
 
 if [ $? -eq 0 ]; then
     echo "$(date) - Clé USB éjectée avec succès. [ejectUSB.sh]"
+    # Supprime les fichiers usb_mount_path.txt et usb_device_path.txt
+    rm -f /usr/share/projet/Backend/usb_mount_path.txt
+    rm -f /usr/share/projet/Backend/usb_device_path.txt
 else
     echo "$(date) - Échec de l'éjection de la clé USB. [ejectUSB.sh]"
     exit 1
