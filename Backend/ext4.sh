@@ -7,7 +7,7 @@ exec >> "$LOG_FILE" 2>&1
 echo "$(date) - Début du script ext4.sh"
 
 # Vérifie si le fichier contenant le chemin du périphérique existe
-USB_DEVICE_PATH_FILE="/usr/share/Backend/usb_device_path.txt"
+USB_DEVICE_PATH_FILE="/usr/share/projet/Backend/usb_device_path.txt"
 if [ ! -f "$USB_DEVICE_PATH_FILE" ]; then
     echo "$(date) - Erreur : Aucun périphérique détecté. Veuillez exécuter detect.sh d'abord. [ext4.sh]"
     exit 1
