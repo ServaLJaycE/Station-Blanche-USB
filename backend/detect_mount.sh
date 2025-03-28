@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Redirige toutes les sorties (stdout et stderr) vers logs.txt
-LOG_FILE="/usr/share/projet/Backend/logs.txt"
+LOG_FILE="/usr/share/projet/backend/logs.txt"
 exec >> "$LOG_FILE" 2>&1
 
 echo "$(date) - Début du script detect_mount.sh [detect_mount.sh]"
 
 # Fichier temporaire pour enregistrer le chemin de montage
-MOUNT_PATH_FILE="/usr/share/projet/Backend/usb_mount_path.txt"
+MOUNT_PATH_FILE="/usr/share/projet/backend/usb_mount_path.txt"
 
 # Liste les périphériques montés avant l'insertion
 MOUNTS_BEFORE=$(lsblk -o MOUNTPOINT -nr | grep -v '^$')

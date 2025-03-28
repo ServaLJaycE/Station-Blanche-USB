@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Redirige toutes les sorties (stdout et stderr) vers logs.txt
-LOG_FILE="/usr/share/projet/Backend/logs.txt"
+LOG_FILE="/usr/share/projet/backend/logs.txt"
 exec >> "$LOG_FILE" 2>&1
 
 echo "$(date) - Début du script ejectUSB.sh [ejectUSB.sh]"
 
 # Vérifie si le fichier contenant le chemin du périphérique existe
-DEVICE_PATH_FILE="/usr/share/projet/Backend/usb_device_path.txt"
+DEVICE_PATH_FILE="/usr/share/projet/backend/usb_device_path.txt"
 if [ ! -f "$DEVICE_PATH_FILE" ]; then
     echo "$(date) - Erreur : Le fichier contenant le chemin du périphérique n'existe pas. [ejectUSB.sh]"
     exit 1
@@ -25,8 +25,8 @@ udisksctl power-off -b "$DEVICE_PATH" >> "$LOG_FILE" 2>&1
 if [ $? -eq 0 ]; then
     echo "$(date) - Clé USB éjectée avec succès. [ejectUSB.sh]"
     # Supprime les fichiers usb_mount_path.txt et usb_device_path.txt
-    rm -f /usr/share/projet/Backend/usb_mount_path.txt
-    rm -f /usr/share/projet/Backend/usb_device_path.txt
+    rm -f /usr/share/projet/backend/usb_mount_path.txt
+    rm -f /usr/share/projet/backend/usb_device_path.txt
 else
     echo "$(date) - Échec de l'éjection de la clé USB. [ejectUSB.sh]"
     exit 1

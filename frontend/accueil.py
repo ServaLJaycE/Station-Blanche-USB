@@ -6,7 +6,7 @@ import time
 
 def verifier_detection():
     # Chemins vers les fichiers générés par detect.sh et detect_mount.sh
-    usb_device_path = "/usr/share/projet/Backend/usb_device_path.txt"
+    usb_device_path = "/usr/share/projet/backend/usb_device_path.txt"
     #usb_mount_path = "/usr/share/projet/Backend/usb_mount_path.txt"
 
     # Vérifie si le fichier existe

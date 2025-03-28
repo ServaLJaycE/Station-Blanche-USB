@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Fichier contenant le chemin de montage du périphérique USB
-USB_MOUNT_PATH_FILE=$(cat /usr/share/projet/Backend/usb_mount_path.txt)
+USB_MOUNT_PATH_FILE=$(cat /usr/share/projet/backend/usb_mount_path.txt)
 LOG_FILE="/usr/share/projet/Backend/logs.txt"
 
 # Initialisation des logs
-echo "=== Début du calcul du hash global SHA-1 : $(date) ===" | tee -a "$LOG_FILE"
+echo "=== Début du calcul du hash global SHA-1 : $(date) === [hash.sh]" | tee -a "$LOG_FILE"
 
 # Vérification que le chemin de montage existe
 if [ ! -d "$USB_MOUNT_PATH_FILE" ]; then
-    echo "Erreur : Le chemin $USB_MOUNT_PATH_FILE n'est pas un répertoire valide. Veuillez vérifier le contenu de /home/anya/test/file.txt." | tee -a "$LOG_FILE"
+    echo "Erreur : Le chemin $USB_MOUNT_PATH_FILE n'est pas un répertoire valide. Veuillez vérifier le contenu de votre USB [hash.sh]" | tee -a "$LOG_FILE"
     exit 1
 fi
 
@@ -17,11 +17,11 @@ fi
 USB_MOUNT_PATH="$USB_MOUNT_PATH_FILE"
 
 if [ -z "$USB_MOUNT_PATH" ]; then
-    echo "Erreur : Aucun périphérique USB monté détecté." | tee -a "$LOG_FILE"
+    echo "Erreur : Aucun périphérique USB monté détecté.[hash.sh]" | tee -a "$LOG_FILE"
     exit 1
 fi
 
-echo "Calcul du hash global SHA-1 pour les fichiers dans : $USB_MOUNT_PATH" | tee -a "$LOG_FILE"
+echo "Calcul du hash global SHA-1 pour les fichiers dans : $USB_MOUNT_PATH [hash.sh]" | tee -a "$LOG_FILE"
 
 # Création d'un fichier temporaire pour concaténer les contenus
 TEMP_FILE=$(mktemp)
@@ -34,9 +34,9 @@ done
 
 # Calcul du hash global SHA-1
 GLOBAL_HASH=$(sha1sum "$TEMP_FILE" | awk '{print $1}')
-echo "Hash global SHA-1 de la clé USB : $GLOBAL_HASH" | tee -a "$LOG_FILE"
+echo "Hash global SHA-1 de la clé USB : $GLOBAL_HASH [hash.sh]" | tee -a "$LOG_FILE"
 
 # Suppression du fichier temporaire
 rm -f "$TEMP_FILE"
 
-echo "=== Fin du calcul du hash global SHA-1 : $(date) ===" | tee -a "$LOG_FILE"
+echo "=== Fin du calcul du hash global SHA-1 : $(date) === [hash.sh]" | tee -a "$LOG_FILE"

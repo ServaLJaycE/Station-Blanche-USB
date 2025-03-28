@@ -3,13 +3,13 @@
 virus=false
 
 # Redirige toutes les sorties (stdout et stderr) vers logs.txt
-LOG_FILE="/usr/share/projet/Backend/logs.txt"
+LOG_FILE="/usr/share/projet/backend/logs.txt"
 exec >> "$LOG_FILE" 2>&1
 
 echo "$(date) - Début du script analyse.sh [analyse.sh]"
 
 # Fichier contenant le chemin de montage du périphérique USB
-USB_MOUNT_PATH_FILE="/usr/share/projet/Backend/usb_mount_path.txt"
+USB_MOUNT_PATH_FILE="/usr/share/projet/backend/usb_mount_path.txt"
 
 # Liste des commandes requises
 REQUIRED_CMDS=("clamscan" "olevba")

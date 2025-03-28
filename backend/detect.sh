@@ -26,7 +26,7 @@ while true; do
         echo "Clé USB détectée : $DEVICE_PATH"
 
         # Enregistre le chemin du périphérique dans un fichier temporaire
-        echo "$DEVICE_PATH" > /usr/share/projet/Backend/usb_device_path.txt
+        echo "$DEVICE_PATH" > /usr/share/projet/backend/usb_device_path.txt
         echo "Le chemin du périphérique a été enregistré dans usb_device_path.txt. [detection.sh]"
         break
     elif [ ! -z "$NEW_DEVICE_LSUSB" ]; then
