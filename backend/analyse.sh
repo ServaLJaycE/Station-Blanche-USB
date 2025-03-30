@@ -42,7 +42,7 @@ echo "$(date) - Analyse du périphérique USB monté sur : $USB_MOUNT_PATH [anal
 
 # Étape 1 : Analyse antivirus avec ClamAV
 echo "$(date) - Étape 1 : Analyse antivirus avec ClamAV... [analyse.sh]"
-clamscan -r "$USB_MOUNT_PATH" --remove >> "$LOG_FILE" 2>&1
+clamscan -r "$USB_MOUNT_PATH" >> "$LOG_FILE" 2>&1
 if [ $? -ne 0 ]; then
     echo "$(date) - ClamAV a détecté des fichiers infectés. Consultez $LOG_FILE pour plus de détails. [analyse.sh]"
     virus=true

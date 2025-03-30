@@ -10,8 +10,13 @@ def formater_peripherique():
 
 def nettoyer_peripherique():
     label.config(text="Nettoyage en cours...")
-    root.destroy()
-    subprocess.run(["python", "end_clean_interface.py"])
+    root.update()
+    try:
+        subprocess.run(["bash", "clean.sh"], capture_output=True, text=True)
+    finally:
+        root.update()
+        root.destroy()
+        subprocess.run(["python", "end_clean_interface.py"])
 
 def quitter():
     root.destroy()
@@ -33,7 +38,6 @@ style.configure('Quitter.TButton', font=("calibri", 30, "bold"), borderwidth=4, 
 style.map('Red.TButton', background=[('active', '#EC7063')])
 style.map('Green.TButton', background=[('active', '#58D68D')])
 style.map('Quitter.TButton', background=[('active', 'grey')])
-
 
 # Conteneur principal
 frame = ttk.Frame(root, padding=50)
