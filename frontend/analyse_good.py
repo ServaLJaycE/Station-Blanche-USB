@@ -3,9 +3,13 @@ import subprocess
 from tkinter import ttk
 from tkinter import *
 from tkinter.ttk import *
+import os
+
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
 
 def retour_accueil():
-    # Script pour calcul de hash
+    process=subprocess.Popen(["bash", os.path.join(backend_dir, "hash.sh")])
+    process.wait()
     root.destroy()
     subprocess.run(["python", "main_interface.py"])
 
