@@ -19,7 +19,7 @@ backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backen
 
 # Fonctions associées aux boutons
 def analyser_usb():
-    label.config(text="🔍 Analyse de la clé USB en cours...", foreground="blue")
+    label.config(text="Analyse de la clé USB en cours...", foreground="blue")
     menu.update_idletasks()  # Mise à jour de l'interface
     subprocess.Popen(["bash", os.path.join(backend_dir, "pre_analyse.sh")])
 
@@ -55,7 +55,9 @@ label = ttk.Label(
     menu,
     text="Bienvenue sur la station de décontamination USB !",
     font=("Arial", 30),
-    anchor="center"
+    anchor="center",
+    wraplength = 700,
+    justify = "center"
 )
 label.place(relx=0.5, rely=0.2, anchor="center")
 
