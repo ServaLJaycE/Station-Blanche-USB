@@ -77,13 +77,13 @@ button_frame.place(relx=0.5, rely=0.5, anchor="center")
 
 # Boutons de formatage avec un espacement plus marqué
 button_fat32 = ttk.Button(button_frame, text="FAT32", image=image_winlin, compound="right", command=fat32, style="Fat32.TButton")
-button_fat32.pack(side=tk.LEFT, padx=20, pady=10)  # Augmentation de padx et pady
+button_fat32.pack(side=tk.LEFT, padx=5, pady=5)
 
 button_ntfs = ttk.Button(button_frame, text="NTFS", image=image_windows, compound="right", command=ntfs, style="Ntfs.TButton")
-button_ntfs.pack(side=tk.LEFT, padx=20, pady=10)
+button_ntfs.pack(side=tk.LEFT)
 
 button_ext4 = ttk.Button(button_frame, text="EXT4", image=image_linux, compound="right", command=ext4, style="Ext4.TButton")
-button_ext4.pack(side=tk.LEFT, padx=20, pady=10)
+button_ext4.pack(side=tk.LEFT, padx=5, pady=5)
 
 # Bouton Quitter avec un meilleur espacement
 button_quitter = ttk.Button(format_interface, text="Quitter", command=quitter, style="Quitter.TButton")

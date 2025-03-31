@@ -56,13 +56,13 @@ frame.pack(expand=True)
 label = ttk.Label(
     frame,
     text="⚠ Attention ! Un élément suspect a été détecté. ⚠",
-    font=("Arial", 25),
+    font=("Arial", 30),
     foreground="red",
     anchor="center",
     justify="center",
     wraplength=700
 )
-label.pack(pady=15)
+label.pack(pady=5)
 
 # Boutons d'action
 btn_format = ttk.Button(frame, text="Formater", command=formater_peripherique, style="Red.TButton")
