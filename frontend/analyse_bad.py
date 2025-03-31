@@ -1,12 +1,10 @@
 import tkinter as tk
 import subprocess
 from tkinter import ttk
-from tkinter import *
-from tkinter.ttk import *
 
 def formater_peripherique():
     root.destroy()
-    subprocess.run(["python", "format_interface.py"])
+    subprocess.run(["python3", "format_interface.py"])
 
 def nettoyer_peripherique():
     label.config(text="Nettoyage en cours...")
@@ -16,23 +14,29 @@ def nettoyer_peripherique():
     finally:
         root.update()
         root.destroy()
-        subprocess.run(["python", "end_clean_interface.py"])
+        subprocess.run(["python3", "end_clean_interface.py"])
 
 def quitter():
     root.destroy()
-    subprocess.run(["python", "main_interface.py"])
+    subprocess.run(["python3", "main_interface.py"])
 
 # Création de la fenêtre principale
-root = Tk()
+root = tk.Tk()
 root.title("Alerte Sécurité USB")
-root.attributes('-fullscreen', True)
+root.attributes('-fullscreen', True)  # Mode plein écran
+
+# Désactiver la touche "Échap" pour éviter de quitter accidentellement
+def disable_escape(event):
+    pass  # Ignore l'événement
+
+root.bind("<Escape>", disable_escape)
 
 # Style ttk
 style = ttk.Style()
-style.configure('TLabel', font=("Arial", 40), padding=20)
-style.configure('Red.TButton', font=("calibri", 30, "bold"), borderwidth=4, relief="raised", width=20, height=20, padding=(30, 20), foreground='black', background='#F5B7B1')   # Rouge
-style.configure('Green.TButton', font=("calibri", 30, "bold"), borderwidth=4, relief="raised", width=20, height=20, padding=(30, 20), foreground='black', background='#ABEBC6')  # Vert
-style.configure('Quitter.TButton', font=("calibri", 30, "bold"), borderwidth=4, relief="raised", width=20, height=20, padding=(30, 20), foreground='black', background='lightgrey')  # Gris
+style.configure('TLabel', font=("Arial", 30), padding=15)
+style.configure('Red.TButton', font=("calibri", 24, "bold"), borderwidth=4, relief="raised", padding=15, foreground='black', background='#F5B7B1')   # Rouge
+style.configure('Green.TButton', font=("calibri", 24, "bold"), borderwidth=4, relief="raised", padding=15, foreground='black', background='#ABEBC6')  # Vert
+style.configure('Quitter.TButton', font=("calibri", 24, "bold"), borderwidth=4, relief="raised", padding=15, foreground='black', background='lightgrey')  # Gris
 
 # Appliquer la couleur au survol
 style.map('Red.TButton', background=[('active', '#EC7063')])
@@ -40,11 +44,19 @@ style.map('Green.TButton', background=[('active', '#58D68D')])
 style.map('Quitter.TButton', background=[('active', 'grey')])
 
 # Conteneur principal
-frame = ttk.Frame(root, padding=50)
+frame = ttk.Frame(root, padding=30)
 frame.pack(expand=True)
 
 # Label d'alerte
-label = ttk.Label(frame, text="⚠ Attention ! Un élément suspect a été détecté. ⚠", font=("Arial", 40), foreground="red", anchor="center", justify="center")
+label = ttk.Label(
+    frame,
+    text="⚠ Attention ! Un élément suspect a été détecté. ⚠",
+    font=("Arial", 30),
+    foreground="red",
+    anchor="center",
+    justify="center",
+    wraplength=700
+)
 label.pack(pady=20)
 
 # Boutons d'action

@@ -27,6 +27,8 @@ label = tk.Label(
     root,
     text="Bonjour, je suis une station de décontamination USB.\nInsérez un périphérique.",
     font=("Arial", 30),
+    wraplength=700,
+    justify="center"
 )
 label.pack(pady=20)
 label.place(relx=0.5, rely=0.5, anchor="center")  # Centre le conteneur

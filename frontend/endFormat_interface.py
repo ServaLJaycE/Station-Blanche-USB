@@ -1,39 +1,47 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import *
-from tkinter.ttk import *
+import subprocess
 
 def retour_accueil():
     root.destroy()
+    subprocess.run(["python3", "main_interface.py"])
 
 # Création de la fenêtre principale
-root = Tk()
+root = tk.Tk()
 root.title("Formatage Terminé")
-root.attributes('-fullscreen', True)
+root.attributes('-fullscreen', True)  # Mode plein écran
 
-# Style ttk
-style = ttk.Style()
-style.configure('TLabel', font=("Arial", 40), padding=20)
-style.configure('OK.TButton', font=("calibri", 30, "bold"), borderwidth=4, relief="raised", width=20, height=20, padding=(30, 20), foreground='black', background='#ABEBC6')  # Vert
-style.map('OK.TButton', background=[('active', '#58D68D')])
+# Désactiver la touche "Échap" pour éviter de quitter accidentellement
+def disable_escape(event):
+    pass  # Ignore l'événement
 
-# Ajouter un bouton pour quitter le mode plein écran
-def exit_fullscreen(event=None):
-    root.attributes('-fullscreen', False)
-
-root.bind('<Escape>', exit_fullscreen)
+root.bind("<Escape>", disable_escape)
 
 # Détermination du message et de la couleur selon le succès du formatage
 success = True  # À remplacer par la vraie variable du succès
 message = "✅ Formatage réussi !" if success else "❌ Échec du formatage.\nVeuillez réessayer."
 message_color = "green" if success else "red"
 
+# Style ttk
+style = ttk.Style()
+style.configure('TLabel', font=("Arial", 30), padding=15)
+style.configure('OK.TButton', font=("calibri", 24, "bold"), borderwidth=4, relief="raised", padding=15, foreground='black', background='#ABEBC6')  # Vert
+style.map('OK.TButton', background=[('active', '#58D68D')])
+
 # Conteneur principal
-frame = ttk.Frame(root, padding=50)
+frame = ttk.Frame(root, padding=30)
 frame.pack(expand=True)
 
 # Label d'information
-label = ttk.Label(frame, text=message, font=("Arial", 40), foreground=message_color, anchor="center", justify="center")
+label = ttk.Label(
+    frame,
+    text=message,
+    font=("Arial", 30),
+    foreground=message_color,
+    anchor="center",
+    justify="center",
+    wraplength=700
+)
 label.pack(pady=20)
 
 # Bouton OK
