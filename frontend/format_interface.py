@@ -21,17 +21,17 @@ backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backen
 def fat32():
     subprocess.run(["bash", os.path.join(backend_dir, "fat32.sh")])
     format_interface.destroy()
-    subprocess.run(["python", "main_interface.py"])
+    subprocess.run(["python", "endFormat_interface.py"])
 
 def ntfs():
     subprocess.run(["bash", os.path.join(backend_dir, "ntfs.sh")])
     format_interface.destroy()
-    subprocess.run(["python", "main_interface.py"])
+    subprocess.run(["python", "endFormat_interface.py"])
 
 def ext4():
     subprocess.run(["bash", os.path.join(backend_dir, "ext4.sh")])
     format_interface.destroy()
-    subprocess.run(["python", "main_interface.py"])
+    subprocess.run(["python", "endFormat_interface.py"])
 
 def quitter():
     format_interface.destroy()
