@@ -1,8 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
+import subprocess
 
 def retour_accueil():
     root.destroy()
+    subprocess.run(["python3", "main_interface.py"])
 
 # Création de la fenêtre principale
 root = tk.Tk()
