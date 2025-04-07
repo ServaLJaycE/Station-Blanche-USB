@@ -33,9 +33,6 @@ def ext4():
     format_interface.destroy()
     subprocess.run(["python", "endFormat_interface.py"])
 
-def quitter():
-    format_interface.destroy()
-    subprocess.run(["python", "main_interface.py"])
 
 # Chargement des images avec gestion d'erreurs si elles sont manquantes
 def charger_image(chemin, facteur_x=1, facteur_y=1):
@@ -84,10 +81,6 @@ button_ntfs.pack(side=tk.LEFT, padx=6, pady=5)
 
 button_ext4 = ttk.Button(button_frame, text="EXT4", image=image_linux, compound="right", command=ext4, style="Ext4.TButton")
 button_ext4.pack(side=tk.LEFT, padx=6, pady=5)
-
-# Bouton Quitter avec un meilleur espacement
-button_quitter = ttk.Button(format_interface, text="Quitter", command=quitter, style="Quitter.TButton")
-button_quitter.place(relx=0.5, rely=0.75, anchor="center")
 
 # Lancer l'interface
 format_interface.mainloop()

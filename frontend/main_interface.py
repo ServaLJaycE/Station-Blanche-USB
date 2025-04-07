@@ -33,8 +33,6 @@ def ejecter_usb():
     menu.destroy()
     subprocess.run(["python", "accueil.py"])
 
-def quitter():
-    menu.quit()
 
 # Style des boutons
 style = ttk.Style()
@@ -74,10 +72,6 @@ button_formater.pack(side=tk.LEFT, padx=10)
 
 button_ejecter = ttk.Button(button_frame, text="Éjecter", command=ejecter_usb, style="Ejecter.TButton")
 button_ejecter.pack(side=tk.LEFT, padx=10)
-
-# Bouton Quitter
-button_quitter = ttk.Button(menu, text="Quitter", command=quitter, style="Quitter.TButton")
-button_quitter.place(relx=0.5, rely=0.75, anchor="center")
 
 # Lancer la boucle principale
 menu.mainloop()
