@@ -50,7 +50,7 @@ image_winlin = charger_image("images/winlin.png", 4, 4)  # FAT32 (Windows et Lin
 
 # Style des boutons
 style = ttk.Style()
-style.configure('TButton', font=('calibri', 20, 'bold'), borderwidth=4, relief='raised', padding=20)  # Ajout de padding
+style.configure('TButton', font=('calibri', 20, 'bold'), borderwidth=4, relief='raised', padding=(0,10))  # Ajout de padding
 style.configure('Fat32.TButton', foreground='black', background='#AED6F1', padding=(0, 20))  # Bleu
 style.configure('Ntfs.TButton', foreground='black', background='#ABEBC6')  # Vert
 style.configure('Ext4.TButton', foreground='black', background='#F5B7B1')  # Rouge
@@ -77,13 +77,13 @@ button_frame.place(relx=0.5, rely=0.5, anchor="center")
 
 # Boutons de formatage avec un espacement plus marqué
 button_fat32 = ttk.Button(button_frame, text="FAT32", image=image_winlin, compound="right", command=fat32, style="Fat32.TButton")
-button_fat32.pack(side=tk.LEFT, padx=10, pady=5)
+button_fat32.pack(side=tk.LEFT, padx=6, pady=5)
 
 button_ntfs = ttk.Button(button_frame, text="NTFS", image=image_windows, compound="right", command=ntfs, style="Ntfs.TButton")
-button_ntfs.pack(side=tk.LEFT, padx=10, pady=5)
+button_ntfs.pack(side=tk.LEFT, padx=6, pady=5)
 
 button_ext4 = ttk.Button(button_frame, text="EXT4", image=image_linux, compound="right", command=ext4, style="Ext4.TButton")
-button_ext4.pack(side=tk.LEFT, padx=10, pady=5)
+button_ext4.pack(side=tk.LEFT, padx=6, pady=5)
 
 # Bouton Quitter avec un meilleur espacement
 button_quitter = ttk.Button(format_interface, text="Quitter", command=quitter, style="Quitter.TButton")
