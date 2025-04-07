@@ -43,7 +43,7 @@ def charger_image(chemin, facteur_x=1, facteur_y=1):
 
 image_windows = charger_image("images/windows.png", 12, 12)  # NTFS (Windows)
 image_linux = charger_image("images/linux.png", 10, 10)  # EXT4 (Linux)
-image_winlin = charger_image("images/winlin.png", 4, 4)  # FAT32 (Windows et Linux)
+image_winlin = charger_image("images/winlin.png", 6, 6)  # FAT32 (Windows et Linux)
 
 # Style des boutons
 style = ttk.Style()
