@@ -2,10 +2,6 @@ import tkinter as tk
 import subprocess
 from tkinter import ttk
 
-def formater_peripherique():
-    root.destroy()
-    subprocess.run(["python3", "format_interface.py"])  # Utilisation de python3
-
 def ejecter_usb():
     root.destroy()
     subprocess.run(["python3", "accueil.py"])  # Utilisation de python3
@@ -48,8 +44,6 @@ label = ttk.Label(
 label.pack(pady=20)
 
 # Boutons d'action
-btn_format = ttk.Button(frame, text="Formater", command=formater_peripherique, style="Red.TButton")
-btn_format.pack(pady=10, fill='x')
 
 button_ejecter = ttk.Button(frame, text="Éjecter", command=ejecter_usb, style="Ejecter.TButton")
 button_ejecter.pack(pady=10, fill='x')
