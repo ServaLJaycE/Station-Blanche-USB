@@ -1,8 +1,29 @@
 import tkinter as tk
 import subprocess
 from tkinter import ttk
+import os
+
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
 
 def ejecter_usb():
+    #! A RAJOUTER POUR CHAQUE EJECTER
+    # Chemin du fichier de logs
+    log_file = "/usr/share/projet/backend/logs.txt"
+    # Chemin de montage de la clé USB
+    usb_mount_path_file = "/usr/share/projet/backend/usb_mount_path.txt"
+
+    # Vérifie si le fichier contenant le chemin de montage existe
+    if os.path.exists(usb_mount_path_file):
+        with open(usb_mount_path_file, "r") as f:
+            usb_mount_path = f.read().strip()
+
+        # Copie le fichier de logs sur la clé USB
+        if os.path.exists(usb_mount_path):
+            subprocess.run(["cp", log_file, os.path.join(usb_mount_path, "logs.txt")])
+        #! A RAJOUTER POUR CHAQUE EJECTER
+
+    process = subprocess.Popen(["bash", os.path.join(backend_dir, "ejectUSB.sh")])
+    process.wait()
     root.destroy()
     subprocess.run(["python3", "accueil.py"])  # Utilisation de python3
 
