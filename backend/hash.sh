@@ -3,6 +3,7 @@
 # Fichier contenant le chemin de montage du périphérique USB
 USB_MOUNT_PATH_FILE=$(cat /usr/share/projet/backend/usb_mount_path.txt)
 LOG_FILE="/usr/share/projet/Backend/logs.txt"
+HASH_FILE="/usr/share/projet/backend/hash.txt"
 
 # Initialisation des logs
 echo "=== Début du calcul du hash global SHA-1 : $(date) === [hash.sh]" | tee -a "$LOG_FILE"
@@ -35,6 +36,10 @@ done
 # Calcul du hash global SHA-1
 GLOBAL_HASH=$(sha1sum "$TEMP_FILE" | awk '{print $1}')
 echo "Hash global SHA-1 de la clé USB : $GLOBAL_HASH [hash.sh]" | tee -a "$LOG_FILE"
+
+# Stockage du hash dans hash.txt
+echo "$GLOBAL_HASH" >> "$HASH_FILE"
+echo "Hash global SHA-1 ajouté dans : $HASH_FILE [hash.sh]" | tee -a "$LOG_FILE"
 
 # Suppression du fichier temporaire
 rm -f "$TEMP_FILE"
