@@ -15,7 +15,7 @@ def disable_escape(event):
 format_interface.bind("<Escape>", disable_escape)
 
 # Définition du dossier backend
-backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../backend"))
 
 # Fonctions pour formater
 def fat32():

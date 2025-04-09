@@ -15,7 +15,7 @@ def disable_escape(event):
 menu.bind("<Escape>", disable_escape)
 
 # Définition du dossier Backend
-backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../backend"))
 
 # Fonctions associées aux boutons
 def analyser_usb():

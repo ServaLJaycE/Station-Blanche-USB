@@ -34,7 +34,7 @@ label.pack(pady=20)
 label.place(relx=0.5, rely=0.5, anchor="center")  # Centre le conteneur
 
 # Lancer detect.sh et detect_mount.sh en parallèle
-backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../backend"))
 subprocess.Popen(["bash", os.path.join(backend_dir, "detect.sh")])
 subprocess.Popen(["bash", os.path.join(backend_dir, "detect_mount.sh")])
 

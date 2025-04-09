@@ -3,7 +3,7 @@ import subprocess
 from tkinter import ttk
 import os
 
-backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../backend"))
 
 def retour_accueil():
     process = subprocess.Popen(["bash", os.path.join(backend_dir, "hash.sh")])

@@ -3,7 +3,7 @@ import subprocess
 from tkinter import ttk
 import os
 
-backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Backend"))
+backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../backend"))
 
 def ejecter_usb():
     #! A RAJOUTER POUR CHAQUE EJECTER
