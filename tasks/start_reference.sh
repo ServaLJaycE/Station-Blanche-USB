@@ -2,7 +2,7 @@
 
 
 # Redirige toute la sortie (stdout et stderr) vers le fichier de log
-LOG_FILE="/usr/share/projet/Tasks/logs.txt"
+LOG_FILE="/usr/share/projet/tasks/logs.txt"
 exec >> "$LOG_FILE" 2>&1
 
 
@@ -13,7 +13,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Chemin vers le fichier Python Tkinter
-PYTHON_FILE="/usr/share/projet/Frontend/accueil.py"
+PYTHON_FILE="/usr/share/projet/frontend/accueil.py"
 
 
 

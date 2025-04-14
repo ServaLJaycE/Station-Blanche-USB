@@ -2,7 +2,7 @@
 
 # Fichier contenant le chemin de montage du périphérique USB
 USB_MOUNT_PATH_FILE=$(cat /usr/share/projet/backend/usb_mount_path.txt)
-LOG_FILE="/usr/share/projet/Backend/logs.txt"
+LOG_FILE="/usr/share/projet/backend/logs.txt"
 HASH_FILE="/usr/share/projet/backend/hash.txt"
 
 # Initialisation des logs

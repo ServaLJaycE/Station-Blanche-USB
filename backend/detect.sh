@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Redirige toutes les sorties (stdout et stderr) vers logs.txt
-LOG_FILE="/usr/share/Backend/logs.txt"
+LOG_FILE="/usr/share/projet/backend/logs.txt"
 exec >> "$LOG_FILE" 2>&1
 
 echo "Détection de la clé USB... [detection.sh]"
@@ -50,7 +50,7 @@ while true; do
 
 
             # Redirige vers le script refus_acces.py
-            python3 /usr/share/projet/Frontend/refus_acces.py
+            python3 /usr/share/projet/frontend/refus_acces.py
             exit 1
         fi
     fi
