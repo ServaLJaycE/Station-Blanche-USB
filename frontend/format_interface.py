@@ -19,16 +19,19 @@ backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../backen
 
 # Fonctions pour formater
 def fat32():
+    label_format.config(text="Formatage de la clé USB en cours...", foreground="blue")
     subprocess.run(["bash", os.path.join(backend_dir, "fat32.sh")])
     format_interface.destroy()
     subprocess.run(["python", "endFormat_interface.py"])
 
 def ntfs():
+    label_format.config(text="Formatage de la clé USB en cours...", foreground="blue")
     subprocess.run(["bash", os.path.join(backend_dir, "ntfs.sh")])
     format_interface.destroy()
     subprocess.run(["python", "endFormat_interface.py"])
 
 def ext4():
+    label_format.config(text="Formatage de la clé USB en cours...", foreground="blue")
     subprocess.run(["bash", os.path.join(backend_dir, "ext4.sh")])
     format_interface.destroy()
     subprocess.run(["python", "endFormat_interface.py"])
