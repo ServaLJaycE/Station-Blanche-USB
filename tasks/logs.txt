@@ -1,0 +1,11 @@
+lun. 21 avril 2025 18:23:25 CEST - Le fichier start.sh est identique à la version actuelle [check.sh].
+lun. 21 avril 2025 18:23:25 CEST - Exécution de start.sh en tant que root... [check.sh].
+lun. 21 avril 2025 18:23:25 CEST - Exécution du fichier Python /usr/share/projet/frontend/accueil.py... [start.sh]
+Traceback (most recent call last):
+  File "/usr/share/projet/frontend/accueil.py", line 21, in <module>
+    root = tk.Tk()
+           ^^^^^^^
+  File "/usr/lib/python3.11/tkinter/__init__.py", line 2326, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: no display name and no $DISPLAY environment variable

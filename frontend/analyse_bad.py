@@ -13,7 +13,7 @@ def nettoyer_peripherique():
     label.config(text="Nettoyage en cours...")
     root.update()
     try:
-        subprocess.run(["bash", "clean.sh"], capture_output=True, text=True)
+        subprocess.run(["bash", os.path.join(backend_dir, "clean.sh")], capture_output=True, text=True)
     finally:
         root.update()
         root.destroy()

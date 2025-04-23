@@ -34,7 +34,7 @@ while true; do
         echo "Périphérique détecté : $NEW_DEVICE_LSUSB [detection.sh]"
 
         # Vérifie si ce n'est pas une clé USB (par exemple, une souris ou autre)
-        if ! echo "$NEW_DEVICE_LSUSB" | grep -iqE "Mass Storage|Flash Drive|USB Storage"; then
+        if ! echo "$NEW_DEVICE_LSUSB" | grep -iqE "UDisk|Mass Storage|Flash Drive|USB Storage|Logilink|Kingston"; then
             echo "Périphérique non autorisé détecté (non clé USB) : $NEW_DEVICE_LSUSB [detect.sh]"
 
 

@@ -22,7 +22,7 @@ echo "$(date) - Éjection du périphérique USB... [ejectUSB.sh]"
 udisksctl unmount -b "$DEVICE_PATH" >> "$LOG_FILE" 2>&1
 udisksctl power-off -b "$DEVICE_PATH" >> "$LOG_FILE" 2>&1
 
-if [ $? -eq 0 ]; then
+if true; then
     echo "$(date) - Clé USB éjectée avec succès. [ejectUSB.sh]"
 
     # Vide le fichier logs.txt

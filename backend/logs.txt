@@ -1,0 +1,5 @@
+mer. 23 avril 2025 13:40:46 CEST - Suppression des fichiers temporaires... [ejectUSB.sh]
+mer. 23 avril 2025 13:40:46 CEST - Fin du script ejectUSB.sh [ejectUSB.sh]
+Détection de la clé USB... [detection.sh]
+mer. 23 avril 2025 13:40:47 CEST - Début du script detect_mount.sh [detect_mount.sh]
+mer. 23 avril 2025 13:40:47 CEST - Veuillez insérer un périphérique USB... [detect_mount.sh]

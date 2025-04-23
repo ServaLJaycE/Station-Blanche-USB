@@ -1,0 +1,101 @@
+lun. 21 avril 2025 17:52:18 CEST - Début du script clean.sh [clean.sh]
+lun. 21 avril 2025 17:52:18 CEST - Nettoyage du périphérique USB monté sur : /media/station/1530-148B [clean.sh]
+lun. 21 avril 2025 17:52:18 CEST - Étape 1 : Désinfection avec ClamAV... [clean.sh]
+
+-------------------------------------------------------------------------------
+
+action_setup: Failed to get realpath of /media/station/1530-148B/quarantine
+/media/station/1530-148B/test: Eicar-Signature FOUND
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8706442
+Engine version: 1.0.7
+Scanned directories: 1
+Scanned files: 2
+Infected files: 1
+Data scanned: 0.01 MB
+Data read: 0.00 MB (ratio 2.00:1)
+Time: 45.435 sec (0 m 45 s)
+Start Date: 2025:04:21 17:52:18
+End Date:   2025:04:21 17:53:03
+lun. 21 avril 2025 17:53:03 CEST - ClamAV a détecté et déplacé des fichiers infectés. Consultez /usr/share/projet/backend/logs_clean.txt pour plus de détails. [clean.sh]
+lun. 21 avril 2025 17:53:03 CEST - Étape 2 : Suppression des macros malveillantes avec oletools... [clean.sh]
+lun. 21 avril 2025 17:53:03 CEST - Nettoyage terminé. [clean.sh]
+lun. 21 avril 2025 18:04:36 CEST - Début du script clean.sh [clean.sh]
+lun. 21 avril 2025 18:04:36 CEST - Nettoyage du périphérique USB monté sur : /media/station/1530-148B [clean.sh]
+lun. 21 avril 2025 18:04:36 CEST - Étape 1 : Désinfection avec ClamAV... [clean.sh]
+
+-------------------------------------------------------------------------------
+
+action_setup: Failed to get realpath of /media/station/1530-148B/quarantine
+/media/station/1530-148B/test: Eicar-Signature FOUND
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8706442
+Engine version: 1.0.7
+Scanned directories: 1
+Scanned files: 2
+Infected files: 1
+Data scanned: 0.00 MB
+Data read: 0.00 MB (ratio 0.00:1)
+Time: 45.012 sec (0 m 45 s)
+Start Date: 2025:04:21 18:04:36
+End Date:   2025:04:21 18:05:21
+lun. 21 avril 2025 18:05:21 CEST - ClamAV a détecté et déplacé des fichiers infectés. Consultez /usr/share/projet/backend/logs_clean.txt pour plus de détails. [clean.sh]
+lun. 21 avril 2025 18:05:21 CEST - Étape 2 : Suppression des macros malveillantes avec oletools... [clean.sh]
+lun. 21 avril 2025 18:05:21 CEST - Nettoyage terminé. [clean.sh]
+mer. 23 avril 2025 13:27:11 CEST - Début du script clean.sh [clean.sh]
+mer. 23 avril 2025 13:27:11 CEST - Nettoyage du périphérique USB monté sur : /media/station/D6C0-14B4 [clean.sh]
+mer. 23 avril 2025 13:27:11 CEST - Étape 1 : Désinfection avec ClamAV... [clean.sh]
+
+-------------------------------------------------------------------------------
+
+action_setup: Failed to get realpath of /media/station/D6C0-14B4/quarantine
+/media/station/D6C0-14B4/dangerous_virus.txt: Eicar-Signature FOUND
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8706443
+Engine version: 1.0.7
+Scanned directories: 1
+Scanned files: 1
+Infected files: 1
+Data scanned: 0.00 MB
+Data read: 0.00 MB (ratio 0.00:1)
+Time: 45.415 sec (0 m 45 s)
+Start Date: 2025:04:23 13:27:11
+End Date:   2025:04:23 13:27:57
+mer. 23 avril 2025 13:27:57 CEST - ClamAV a détecté et déplacé des fichiers infectés. Consultez /usr/share/projet/backend/logs_clean.txt pour plus de détails. [clean.sh]
+mer. 23 avril 2025 13:27:57 CEST - Étape 2 : Suppression des macros malveillantes avec oletools... [clean.sh]
+mer. 23 avril 2025 13:27:57 CEST - Nettoyage terminé. [clean.sh]
+mer. 23 avril 2025 13:34:17 CEST - Début du script clean.sh [clean.sh]
+mer. 23 avril 2025 13:34:17 CEST - Nettoyage du périphérique USB monté sur : /media/station/D6C0-14B4 [clean.sh]
+mer. 23 avril 2025 13:34:17 CEST - Étape 1 : Désinfection avec ClamAV... [clean.sh]
+
+-------------------------------------------------------------------------------
+
+action_setup: Failed to get realpath of /media/station/D6C0-14B4/quarantine
+mer. 23 avril 2025 13:35:44 CEST - Début du script clean.sh [clean.sh]
+mer. 23 avril 2025 13:35:44 CEST - Nettoyage du périphérique USB monté sur : /media/station/D6C0-14B4 [clean.sh]
+mer. 23 avril 2025 13:35:44 CEST - Étape 1 : Désinfection avec ClamAV... [clean.sh]
+
+-------------------------------------------------------------------------------
+
+/media/station/D6C0-14B4/dangerous_virus.txt: Eicar-Signature FOUND
+/media/station/D6C0-14B4/dangerous_virus.txt: moved to '/media/station/D6C0-14B4/quarantine/dangerous_virus.txt'
+/media/station/D6C0-14B4/quarantine/dangerous_virus.txt: Eicar-Signature FOUND
+/media/station/D6C0-14B4/quarantine/dangerous_virus.txt: moved to '/media/station/D6C0-14B4/quarantine/dangerous_virus.txt.001'
+
+----------- SCAN SUMMARY -----------
+Known viruses: 8706443
+Engine version: 1.0.7
+Scanned directories: 2
+Scanned files: 3
+Infected files: 2
+Data scanned: 0.00 MB
+Data read: 0.00 MB (ratio 0.00:1)
+Time: 45.516 sec (0 m 45 s)
+Start Date: 2025:04:23 13:35:44
+End Date:   2025:04:23 13:36:29
+mer. 23 avril 2025 13:36:29 CEST - ClamAV a détecté et déplacé des fichiers infectés. Consultez /usr/share/projet/backend/logs_clean.txt pour plus de détails. [clean.sh]
+mer. 23 avril 2025 13:36:29 CEST - Étape 2 : Suppression des macros malveillantes avec oletools... [clean.sh]
+mer. 23 avril 2025 13:36:29 CEST - Nettoyage terminé. [clean.sh]

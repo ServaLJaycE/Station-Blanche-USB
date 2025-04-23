@@ -1,7 +1,8 @@
 #!/bin/bash
 
-LOG_FILE="/usr/share/projet/backend/logs_clean.txt"
+LOG_FILE="/usr/share/projet/backend/logs.txt"
 USB_MOUNT_PATH_FILE="/usr/share/projet/backend/usb_mount_path.txt"
+USB_FILE_PATH="/usr/share/projet/backend/usb_device_path.txt"
 
 echo "$(date) - Début du script clean.sh [clean.sh]" >> "$LOG_FILE"
 
@@ -23,6 +24,7 @@ echo "$(date) - Nettoyage du périphérique USB monté sur : $USB_MOUNT_PATH [cl
 
 # Étape 1 : Désinfection avec ClamAV
 echo "$(date) - Étape 1 : Désinfection avec ClamAV... [clean.sh]" >> "$LOG_FILE"
+sudo mkdir $USB_MOUNT_PATH/quarantine 
 clamscan -r "$USB_MOUNT_PATH" --move="$USB_MOUNT_PATH/quarantine" --log="$LOG_FILE" --infected
 if [ $? -ne 0 ]; then
     echo "$(date) - ClamAV a détecté et déplacé des fichiers infectés. Consultez $LOG_FILE pour plus de détails. [clean.sh]" >> "$LOG_FILE"
@@ -30,7 +32,7 @@ else
     echo "$(date) - ClamAV : Aucun fichier infecté détecté. [clean.sh]" >> "$LOG_FILE"
 fi
 
-# Étape 2 : Suppression des macros malveillantes avec oletools
+# Étape 2 : Suppression des macros malveillantes avec oletols
 echo "$(date) - Étape 2 : Suppression des macros malveillantes avec oletools... [clean.sh]" >> "$LOG_FILE"
 find "$USB_MOUNT_PATH" -type f \( -iname "*.doc" -o -iname "*.docx" -o -iname "*.xls" -o -iname "*.xlsx" \) | while read -r file; do
     echo "$(date) - Analyse et nettoyage du fichier : $file [clean.sh]" >> "$LOG_FILE"
