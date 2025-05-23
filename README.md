@@ -125,4 +125,13 @@ sudo crontab -l
 - **Permissions des fichiers** :
   - Les permissions des fichiers sont configurées automatiquement par le script `install.sh`.
 
+
+## Crédits
+
+Projet réalisé par :
+- **Logan Doceul** – logan.doceul@student.junia.com
+- **Anya Lallart** - anya.lallart@student.junia.com
+- **Alixe Maerte** - alixe.maerte@student.junia.com
+- **Camille Langer** - camille.langer@student.junia.com
+
 ---
